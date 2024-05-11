@@ -1,0 +1,29 @@
+.invoice-page {
+  background-color: #fff;
+  width: 80%;
+  margin: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* 15px and 0.3 adjust box-shadow strength*/
+  padding: 30px;
+  border-radius: 10px;
+  font-family: Roboto, sans-serif;
+}
+
+.company-logo {
+  display: block;
+  margin: auto; /* display: block and margin: auto required for centering the logo*/
+  max-width: 300px;
+}
+
+.invoice-header {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.invoice-series {
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
