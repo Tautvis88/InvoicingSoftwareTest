@@ -1,10 +1,21 @@
-import { Directive } from '@angular/core';
+import { Directive, ElementRef, OnInit } from '@angular/core';
+import flatpickr from 'flatpickr';
 
 @Directive({
-  selector: '[appFlatpickr]'
+  selector: '[appFlatpickr]',
 })
-export class FlatpickrDirective {
+export class FlatpickrDirective implements OnInit {
+  constructor(private elementRef: ElementRef) {}
 
-  constructor() { }
-
+  ngOnInit() {
+    flatpickr(this.elementRef.nativeElement, {
+      locale: {
+        firstDayOfWeek: 1,
+      },
+      weekNumbers: true,
+      showMonths: 1,
+      dateFormat: 'Y-m-d',
+      minDate: '2020-01',
+    });
+  }
 }
