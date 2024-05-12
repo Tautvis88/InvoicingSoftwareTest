@@ -40,8 +40,9 @@
 .invoice-date {
   width: 12%;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 3px;
   border: 1px solid #ccc;
+  background-color: #f9f9f9;
   font-weight: bold;
   padding: 2px;
   font-size: 1em;
@@ -73,6 +74,9 @@
   font-weight: bold;
   font-size: 16px;
   padding: 5px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
 #buyer-select option {
@@ -83,7 +87,7 @@
 
 .seller-details p,
 .buyer-details p {
-  line-height: 1.5;
+  line-height: 1.7;
   font-style: italic;
   margin: 0;
 }
@@ -92,4 +96,45 @@
   display: inline-block;
   /* <span> - inline element, it doesn't have top/bottom margin, need to set the display property to inline-block */
   margin-bottom: 10px;
+}
+
+.service-table-container {
+  margin-top: 20px;
+  background-color: #f9f9f9;
+}
+
+.service-table {
+  width: 100%;
+  border-collapse: collapse; /* merges the double lines of the cell borders */
+  text-align: center;
+}
+
+.service-table thead {
+  background-color: #f0f0f0; /* darker gray for thead */
+}
+
+.service-table th,
+.service-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.service-table tr:hover {
+  background-color: #e0e0e0; /* Row hover effect */
+}
+
+.service-table tfoot .no-style {
+  background-color: white;
+  border: none;
+}
+
+.service-table tfoot .footer-label {
+  text-align: right;
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+
+.service-table tfoot .footer-amount {
+  font-weight: bold;
+  background-color: #f0f0f0;
 }
