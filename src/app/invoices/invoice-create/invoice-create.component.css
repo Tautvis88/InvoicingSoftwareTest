@@ -3,7 +3,7 @@
   width: 80%;
   margin: auto;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* 15px and 0.3 adjust box-shadow strength*/
-  padding: 50px;
+  padding: 40px 50px 50px 70px;
   border-radius: 10px;
   font-family: Roboto, sans-serif;
 }
@@ -31,7 +31,6 @@
 .date-field {
   text-align: right;
   font-size: 1.2em;
-  padding-right: 10px;
 }
 
 .date-field label {
@@ -54,9 +53,14 @@
   margin-top: 20px;
 }
 
+.seller,
+.buyer {
+  display: block;
+  margin-bottom: 15px;
+}
 .seller-details,
 .buyer-details {
-  width: 40%; /* DO I NEED THIS? SETS THE SIZE OF THE COLUMNS???*/
+  width: 55%; /* DO I NEED THIS? SETS THE SIZE OF THE COLUMNS???*/
 }
 
 .company-name {
@@ -64,10 +68,24 @@
   font-size: 18px;
 }
 
+#buyer-select {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 5px;
+}
+
+#buyer-select option {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 16px;
+}
+
 .seller-details p,
 .buyer-details p {
   line-height: 1.5;
   font-style: italic;
+  margin: 0;
 }
 
 .email {

@@ -12,7 +12,7 @@
 
   <div class="details-container">
     <div class="seller-details">
-      <strong>PARDAVĖJAS:</strong>
+      <strong class="seller">PARDAVĖJAS:</strong>
       <p>
         <strong class="company-name">UAB "STATAS"</strong><br />
         Poilsio 2-oji g. 24, Jautakių k., Mažeikių raj.<br />
@@ -33,14 +33,19 @@
     </div>
 
     <div class="buyer-details">
-      <strong>PIRKĖJAS:</strong>
+      <strong class="buyer">PIRKĖJAS:</strong>
+      <div class="buyer-dropdown">
+        <select id="buyer-select" (change)="onBuyerChange($event)">
+          <option value="" disabled selected>Pasirinkite įmonę...</option>
+          <option *ngFor="let buyer of buyers" [value]="buyer.name">{{ buyer.name }}</option>
+        </select>
+      </div>
       <p>
-        <strong>MAŽEIKIŲ RAJONO SAVIVALDYBĖS ADMINISTRACIJA</strong><br />
-        <strong>Adresas:</strong> Laisvės g. 8, LT-89223, Mažeikiai<br />
-        <strong>Įmonės kodas:</strong> 167371234<br />
-        <strong>PVM kodas:</strong> nėra PVM mokėtojas<br />
-        <strong>Tel:</strong> +370 693 91985<br />
-        <strong>El. p.</strong> daiva.kuodiene&#64;mazeikiai.lt
+        <strong>Adresas: </strong>{{ selectedBuyer?.address }}<br />
+        <strong>Įmonės kodas: </strong>{{ selectedBuyer?.companyCode }}<br />
+        <strong>PVM kodas: </strong>{{ selectedBuyer?.VATCode }}<br />
+        <strong>Tel: </strong>{{ selectedBuyer?.phoneNumber }}<br />
+        <strong>El. p. </strong>{{ selectedBuyer?.email }}<br />
       </p>
     </div>
   </div>
