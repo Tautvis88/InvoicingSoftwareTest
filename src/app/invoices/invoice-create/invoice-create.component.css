@@ -3,7 +3,7 @@
   width: 80%;
   margin: auto;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* 15px and 0.3 adjust box-shadow strength*/
-  padding: 30px;
+  padding: 50px;
   border-radius: 10px;
   font-family: Roboto, sans-serif;
 }
@@ -46,4 +46,32 @@
   font-weight: bold;
   padding: 2px;
   font-size: 1em;
+}
+
+.details-container {
+  display: flex; /* puts seller and buyer into one row */
+  justify-content: space-between; /* moves seller to the left, buyer to the right side - adds space between them */
+  margin-top: 20px;
+}
+
+.seller-details,
+.buyer-details {
+  width: 40%; /* DO I NEED THIS? SETS THE SIZE OF THE COLUMNS???*/
+}
+
+.company-name {
+  text-decoration: underline;
+  font-size: 18px;
+}
+
+.seller-details p,
+.buyer-details p {
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.email {
+  display: inline-block;
+  /* <span> - inline element, it doesn't have top/bottom margin, need to set the display property to inline-block */
+  margin-bottom: 10px;
 }
