@@ -56,55 +56,65 @@
         <tr>
           <th>Eilės Nr.</th>
           <th>Paslaugos pavadinimas</th>
-          <th>Mato vnt.</th>
+          <th>Mato<br />vnt.</th>
           <th>Kiekis</th>
           <th>Kaina (Eur)</th>
           <th>Suma (Eur)</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Pamatų ir tvoros įrengimas adresu</td>
-          <td>vnt.</td>
-          <td>2</td>
-          <td>500</td>
-          <td>1000</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Stogo remonto darbai adresu</td>
-          <td>vnt.</td>
-          <td>1</td>
-          <td>500</td>
-          <td>500</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Metalinių konstrukcijų paruošimas ir montavimas adresu</td>
-          <td>vnt.</td>
-          <td>3</td>
-          <td>200</td>
-          <td>600</td>
+        <tr *ngFor="let row of rows; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td><input type="text" class="table-input" [(ngModel)]="row.serviceName" /></td>
+          <td>
+            <select class="table-input" [(ngModel)]="row.unit">
+              <option *ngFor="let unit of units" [value]="unit" [innerHTML]="getUnitDisplay(unit)"></option>
+            </select>
+          </td>
+          <td class="quantity-cell">
+            <button class="quantity-btn minus" (click)="decreaseQuantity(row)">–</button>
+            <input
+              type="number"
+              class="table-input"
+              [(ngModel)]="row.quantity"
+              (input)="updateRowSum(row)"
+              (focus)="onFocusSelect($event)"
+            />
+            <button class="quantity-btn plus" (click)="increaseQuantity(row)">+</button>
+          </td>
+          <td>
+            <input
+              type="number"
+              class="table-input"
+              [(ngModel)]="row.price"
+              [ngModelOptions]="{ updateOn: 'blur' }"
+              (blur)="row.price = Number(row.price.toFixed(2))"
+              (input)="validateDecimal($event, row)"
+              (focus)="onFocusSelect($event)"
+            />
+          </td>
+          <td>{{ row.sum | number: "1.2-2" }}</td>
         </tr>
       </tbody>
       <tfoot>
         <tr>
           <td colspan="3" class="no-style"></td>
           <td colspan="2" class="footer-label">Viso be PVM</td>
-          <td id="total-VAT-excluded" class="footer-amount"></td>
+          <td id="total-VAT-excluded" class="footer-amount">{{ totalWithoutVAT | number: "1.2-2" }}</td>
         </tr>
         <tr>
           <td colspan="3" class="no-style"></td>
           <td colspan="2" class="footer-label">PVM 21%</td>
-          <td id="VAT-amount" class="footer-amount"></td>
+          <td id="VAT-amount" class="footer-amount">{{ VATAmount | number: "1.2-2" }}</td>
         </tr>
         <tr>
           <td colspan="3" class="no-style"></td>
           <td colspan="2" class="footer-label">Bendra suma</td>
-          <td id="total-VAT-included" class="footer-amount"></td>
+          <td id="total-VAT-included" class="footer-amount">{{ totalWithVAT | number: "1.2-2" }}</td>
         </tr>
       </tfoot>
     </table>
+    <button (click)="addRow()">Add new row</button>
+    <p>m<sup>2</sup></p>
   </div>
 </div>

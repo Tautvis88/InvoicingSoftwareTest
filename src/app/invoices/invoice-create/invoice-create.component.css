@@ -110,8 +110,38 @@
   text-align: center;
 }
 
+.service-table th:nth-child(1),
+.service-table td:nth-child(1) {
+  width: 5%;
+}
+
+.service-table th:nth-child(2),
+.service-table td:nth-child(2) {
+  width: 55%;
+}
+
+.service-table th:nth-child(3),
+.service-table td:nth-child(3) {
+  width: 10%;
+}
+
+.service-table th:nth-child(4),
+.service-table td:nth-child(4) {
+  width: 10%;
+}
+
+.service-table th:nth-child(5),
+.service-table td:nth-child(5) {
+  width: 10%;
+}
+
+.service-table th:nth-child(6),
+.service-table td:nth-child(6) {
+  width: 10%;
+}
 .service-table thead {
   background-color: #f0f0f0; /* darker gray for thead */
+  line-height: 1.5;
 }
 
 .service-table th,
@@ -120,8 +150,12 @@
   padding: 8px;
 }
 
-.service-table tr:hover {
-  background-color: #e0e0e0; /* Row hover effect */
+.service-table td:hover {
+  background-color: #e0e0e0; /* Cell hover effect */
+}
+
+.service-table td:hover .table-input {
+  background-color: #e0e0e0;
 }
 
 .service-table tfoot .no-style {
@@ -138,4 +172,37 @@
 .service-table tfoot .footer-amount {
   font-weight: bold;
   background-color: #f0f0f0;
+}
+
+.table-input {
+  border: none;
+  outline: none;
+  background-color: #f9f9f9;
+  font-size: inherit;
+  text-align: center;
+  padding: 0;
+  width: 100%;
+}
+/* Removes arrows (up/down buttons also known as spinners) next to <input type="number"> elements for
+   Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Remove arrows in input type number for Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.quantity-btn {
+  font-size: 1.3em;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.quantity-cell .table-input {
+  width: 35%;
 }
