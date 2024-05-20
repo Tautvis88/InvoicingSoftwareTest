@@ -87,8 +87,6 @@
               type="number"
               class="table-input"
               [(ngModel)]="row.price"
-              [ngModelOptions]="{ updateOn: 'blur' }"
-              (blur)="row.price = Number(row.price.toFixed(2))"
               (input)="validateDecimal($event, row)"
               (focus)="onFocusSelect($event)"
             />

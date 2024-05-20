@@ -37,11 +37,11 @@ export class InvoiceCreateComponent implements OnInit {
   }
 
   addRow() {
-    this.rows.push({ serviceName: "", unit: Unit.Vnt, quantity: 0, price: 0.0, sum: 0.0 });
+    this.rows.push({ serviceName: "", unit: Unit.Vnt, quantity: 0, price: "0.00", sum: 0.0 });
   }
 
   updateRowSum(row: InvoiceRow): void {
-    row.sum = parseFloat((row.quantity * row.price).toFixed(2));
+    row.sum = parseFloat((row.quantity * parseFloat(row.price)).toFixed(2));
     this.updateTotals();
   }
 
@@ -87,7 +87,7 @@ export class InvoiceCreateComponent implements OnInit {
     if (!regex.test(value)) {
       inputElement.value = value.slice(0, value.length - 1);
     }
-    row.price = parseFloat(inputElement.value);
+    row.price = inputElement.value;
     this.updateRowSum(row);
   }
 
