@@ -89,6 +89,7 @@
               [(ngModel)]="row.price"
               (input)="validateDecimal($event, row)"
               (focus)="onFocusSelect($event)"
+              (blur)="formatPrice($event, row)"
             />
           </td>
           <td>{{ row.sum | number: "1.2-2" }}</td>

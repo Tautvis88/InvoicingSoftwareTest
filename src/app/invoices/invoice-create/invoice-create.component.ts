@@ -91,5 +91,13 @@ export class InvoiceCreateComponent implements OnInit {
     this.updateRowSum(row);
   }
 
-  protected readonly Number = Number;
+  formatPrice(event: Event, row: InvoiceRow): void {
+    const inputElement = event.target as HTMLInputElement;
+    const value = inputElement.value;
+
+    const regex = /^\d+(\.\d{0,2})?$/;
+    regex.test(value) ? (inputElement.value = parseFloat(value).toFixed(2)) : (row.price = "0.00");
+
+    this.updateRowSum(row);
+  }
 }
