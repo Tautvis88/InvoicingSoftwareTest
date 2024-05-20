@@ -101,7 +101,6 @@
 
 .service-table-container {
   margin-top: 20px;
-  background-color: #f9f9f9;
 }
 
 .service-table {
@@ -139,9 +138,14 @@
 .service-table td:nth-child(6) {
   width: 10%;
 }
+
 .service-table thead {
   background-color: #f0f0f0; /* darker gray for thead */
   line-height: 1.5;
+}
+
+.service-table tbody {
+  background-color: #f9f9f9;
 }
 
 .service-table th,
@@ -205,4 +209,18 @@ input[type="number"] {
 
 .quantity-cell .table-input {
   width: 35%;
+}
+
+.service-table th:last-child,
+.service-table td:last-child {
+  background-color: white;
+  border: none;
+}
+
+.delete-icon {
+  cursor: pointer;
+}
+
+.delete-icon:hover {
+  color: red;
 }

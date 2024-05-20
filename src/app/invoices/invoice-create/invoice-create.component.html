@@ -60,6 +60,7 @@
           <th>Kiekis</th>
           <th>Kaina (Eur)</th>
           <th>Suma (Eur)</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -93,6 +94,7 @@
             />
           </td>
           <td>{{ row.sum | number: "1.2-2" }}</td>
+          <td class="delete-icon" (click)="deleteRow(i)">✖</td>
         </tr>
       </tbody>
       <tfoot>
@@ -100,16 +102,19 @@
           <td colspan="3" class="no-style"></td>
           <td colspan="2" class="footer-label">Viso be PVM</td>
           <td id="total-VAT-excluded" class="footer-amount">{{ totalWithoutVAT | number: "1.2-2" }}</td>
+          <td></td>
         </tr>
         <tr>
           <td colspan="3" class="no-style"></td>
           <td colspan="2" class="footer-label">PVM 21%</td>
           <td id="VAT-amount" class="footer-amount">{{ VATAmount | number: "1.2-2" }}</td>
+          <td></td>
         </tr>
         <tr>
           <td colspan="3" class="no-style"></td>
           <td colspan="2" class="footer-label">Bendra suma</td>
           <td id="total-VAT-included" class="footer-amount">{{ totalWithVAT | number: "1.2-2" }}</td>
+          <td></td>
         </tr>
       </tfoot>
     </table>

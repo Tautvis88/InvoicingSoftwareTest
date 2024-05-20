@@ -100,4 +100,11 @@ export class InvoiceCreateComponent implements OnInit {
 
     this.updateRowSum(row);
   }
+
+  deleteRow(index: number): void {
+    if (this.rows.length != 1) {
+      this.rows.splice(index, 1);
+    }
+    this.updateTotals();
+  }
 }
