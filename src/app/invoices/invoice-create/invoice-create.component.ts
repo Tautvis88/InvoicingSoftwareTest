@@ -82,7 +82,7 @@ export class InvoiceCreateComponent implements OnInit {
 
   validateDecimal(event: Event, row: InvoiceRow): void {
     const inputElement = event.target as HTMLInputElement;
-    const value = inputElement.value;
+    const value = inputElement.value.replace(/,/g, ".");
     const regex = /^\d+(\.\d{0,2})?$/;
     if (!regex.test(value)) {
       inputElement.value = value.slice(0, value.length - 1);
@@ -93,7 +93,7 @@ export class InvoiceCreateComponent implements OnInit {
 
   formatPrice(event: Event, row: InvoiceRow): void {
     const inputElement = event.target as HTMLInputElement;
-    const value = inputElement.value;
+    const value = inputElement.value.replace(/,/g, ".");
 
     const regex = /^\d+(\.\d{0,2})?$/;
     regex.test(value) ? (inputElement.value = parseFloat(value).toFixed(2)) : (row.price = "0.00");
