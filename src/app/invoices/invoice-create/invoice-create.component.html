@@ -68,11 +68,15 @@
           <td>{{ i + 1 }}</td>
           <td>
             <input
+              list="service-list"
               type="text"
               class="table-input"
               [(ngModel)]="row.serviceName"
               [ngClass]="{ 'highlighted-row': row.isHighlighted }"
             />
+            <datalist id="service-list">
+              <option *ngFor="let service of services" [value]="service.name">{{ service.name }}</option>
+            </datalist>
           </td>
           <td>
             <select class="table-input" [(ngModel)]="row.unit" [ngClass]="{ 'highlighted-row': row.isHighlighted }">

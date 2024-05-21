@@ -17,3 +17,7 @@ export interface InvoiceRow {
   price: string;
   sum: number;
 }
+
+export interface Service {
+  name: string;
+}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { InvoiceDataService } from "../../services/invoice-data.service";
-import { Buyer, InvoiceRow } from "../../models/invoice.model";
+import { Buyer, InvoiceRow, Service } from "../../models/invoice.model";
 import { Unit } from "../../models/unit.enum";
 
 @Component({
@@ -12,6 +12,7 @@ export class InvoiceCreateComponent implements OnInit {
   buyers: Buyer[] = [];
   selectedBuyer: Buyer | null = null;
   rows: InvoiceRow[] = [];
+  services: Service[] = [];
   totalWithoutVAT: number = 0;
   VATAmount: number = 0;
   totalWithVAT: number = 0;
@@ -22,11 +23,18 @@ export class InvoiceCreateComponent implements OnInit {
   ngOnInit(): void {
     this.loadBuyers();
     this.addRow();
+    this.loadServices();
   }
 
   loadBuyers(): void {
     this.invoiceDataService.getBuyers().subscribe((data: Buyer[]) => {
       this.buyers = data;
+    });
+  }
+
+  loadServices(): void {
+    this.invoiceDataService.getServices().subscribe((data: Service[]) => {
+      this.services = data;
     });
   }
 
