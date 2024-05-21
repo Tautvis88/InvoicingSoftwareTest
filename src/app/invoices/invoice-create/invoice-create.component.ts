@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { Buyer, BuyerService } from "../../services/buyer.service";
-import { InvoiceRow } from "../../types/invoice-row.model";
-import { Unit } from "../../types/units.enum";
+import { InvoiceDataService } from "../../services/invoice-data.service";
+import { Buyer, InvoiceRow } from "../../models/invoice.model";
+import { Unit } from "../../models/unit.enum";
 
 @Component({
   selector: "app-invoice-create",
@@ -17,7 +17,7 @@ export class InvoiceCreateComponent implements OnInit {
   totalWithVAT: number = 0;
   units = Object.values(Unit);
 
-  constructor(private buyerService: BuyerService) {}
+  constructor(private invoiceDataService: InvoiceDataService) {}
 
   ngOnInit(): void {
     this.loadBuyers();
@@ -25,7 +25,7 @@ export class InvoiceCreateComponent implements OnInit {
   }
 
   loadBuyers(): void {
-    this.buyerService.getBuyers().subscribe((data: Buyer[]) => {
+    this.invoiceDataService.getBuyers().subscribe((data: Buyer[]) => {
       this.buyers = data;
     });
   }
