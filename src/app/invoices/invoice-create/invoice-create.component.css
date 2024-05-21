@@ -100,6 +100,7 @@
 }
 
 .service-table-container {
+  position: relative; /* Helps the "Add new row" button stay inside this container because its position: absolute */
   margin-top: 20px;
 }
 
@@ -227,4 +228,32 @@ input[type="number"] {
 
 .highlighted-row {
   background-color: #ffe0e0; /* Light red color for highlighting the row which will be deleted */
+}
+
+.add-row-btn {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 40px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background-color: #f9f9f9;
+  padding: 5px;
+}
+
+.add-row-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.add-row-btn span {
+  padding-left: 2px;
+  padding-right: 3px;
+}
+
+.add-row-btn:hover {
+  background-color: #e0e0e0;
 }
