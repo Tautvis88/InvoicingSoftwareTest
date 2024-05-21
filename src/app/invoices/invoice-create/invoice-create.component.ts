@@ -107,4 +107,8 @@ export class InvoiceCreateComponent implements OnInit {
     }
     this.updateTotals();
   }
+
+  highlightRow(row: InvoiceRow, highlight: boolean): void {
+    row.isHighlighted = highlight;
+  }
 }

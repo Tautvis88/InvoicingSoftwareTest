@@ -224,3 +224,7 @@ input[type="number"] {
 .delete-icon:hover {
   color: red;
 }
+
+.highlighted-row {
+  background-color: #ffe0e0; /* Light red color for highlighting the row which will be deleted */
+}

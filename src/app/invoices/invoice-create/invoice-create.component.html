@@ -64,11 +64,18 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let row of rows; let i = index">
+        <tr *ngFor="let row of rows; let i = index" [ngClass]="{ 'highlighted-row': row.isHighlighted }">
           <td>{{ i + 1 }}</td>
-          <td><input type="text" class="table-input" [(ngModel)]="row.serviceName" /></td>
           <td>
-            <select class="table-input" [(ngModel)]="row.unit">
+            <input
+              type="text"
+              class="table-input"
+              [(ngModel)]="row.serviceName"
+              [ngClass]="{ 'highlighted-row': row.isHighlighted }"
+            />
+          </td>
+          <td>
+            <select class="table-input" [(ngModel)]="row.unit" [ngClass]="{ 'highlighted-row': row.isHighlighted }">
               <option *ngFor="let unit of units" [value]="unit" [innerHTML]="getUnitDisplay(unit)"></option>
             </select>
           </td>
@@ -80,6 +87,7 @@
               [(ngModel)]="row.quantity"
               (input)="updateRowSum(row)"
               (focus)="onFocusSelect($event)"
+              [ngClass]="{ 'highlighted-row': row.isHighlighted }"
             />
             <button class="quantity-btn plus" (click)="increaseQuantity(row)">+</button>
           </td>
@@ -91,10 +99,18 @@
               (input)="validateDecimal($event, row)"
               (focus)="onFocusSelect($event)"
               (blur)="formatPrice($event, row)"
+              [ngClass]="{ 'highlighted-row': row.isHighlighted }"
             />
           </td>
           <td>{{ row.sum | number: "1.2-2" }}</td>
-          <td class="delete-icon" (click)="deleteRow(i)">✖</td>
+          <td
+            class="delete-icon"
+            (mouseenter)="highlightRow(row, true)"
+            (mouseleave)="highlightRow(row, false)"
+            (click)="deleteRow(i)"
+          >
+            ✖
+          </td>
         </tr>
       </tbody>
       <tfoot>
