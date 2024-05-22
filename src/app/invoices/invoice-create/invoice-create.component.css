@@ -187,7 +187,9 @@
   text-align: center;
   padding: 0;
   width: 100%;
+  appearance: none; /* In Opera browser, the units dropdown field would show borders */
 }
+
 /* Removes arrows (up/down buttons also known as spinners) next to <input type="number"> elements for
    Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-inner-spin-button,
