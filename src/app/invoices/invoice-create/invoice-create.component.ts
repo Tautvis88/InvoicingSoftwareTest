@@ -90,12 +90,14 @@ export class InvoiceCreateComponent implements OnInit {
 
   validateDecimal(event: Event, row: InvoiceRow): void {
     const inputElement = event.target as HTMLInputElement;
-    const value = inputElement.value.replace(/,/g, ".");
+    let value = inputElement.value.replace(/,/g, ".");
+
     const regex = /^\d+(\.\d{0,2})?$/;
     if (!regex.test(value)) {
       inputElement.value = value.slice(0, value.length - 1);
     }
-    row.price = inputElement.value;
+    inputElement.value = value;
+    row.price = value;
     this.updateRowSum(row);
   }
 
