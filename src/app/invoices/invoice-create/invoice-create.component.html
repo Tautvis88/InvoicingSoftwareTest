@@ -89,7 +89,8 @@
               type="number"
               class="table-input"
               [(ngModel)]="row.quantity"
-              (input)="updateRowSum(row)"
+              (keydown)="preventNegativeKeyboardSymbol($event)"
+              (input)="preventPasteNegativeQuantity($event, row)"
               (focus)="onFocusSelect($event)"
               [ngClass]="{ 'highlighted-row': row.isHighlighted }"
             />

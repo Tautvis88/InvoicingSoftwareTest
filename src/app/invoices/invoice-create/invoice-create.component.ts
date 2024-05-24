@@ -121,4 +121,18 @@ export class InvoiceCreateComponent implements OnInit {
   highlightRow(row: InvoiceRow, highlight: boolean): void {
     row.isHighlighted = highlight;
   }
+
+  preventPasteNegativeQuantity(event: Event, row: InvoiceRow): void {
+    const inputElement = event.target as HTMLInputElement;
+    inputElement.value = inputElement.value.replace(/-/g, "");
+    row.quantity = parseFloat(inputElement.value) || 0;
+    inputElement.value = row.quantity.toString(); // prevents pasting letters
+    this.updateRowSum(row);
+  }
+
+  preventNegativeKeyboardSymbol(event: KeyboardEvent): void {
+    if (event.key === "-") {
+      event.preventDefault();
+    }
+  }
 }
