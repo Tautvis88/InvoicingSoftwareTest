@@ -67,16 +67,15 @@
         <tr *ngFor="let row of rows; let i = index" [ngClass]="{ 'highlighted-row': row.isHighlighted }">
           <td>{{ i + 1 }}</td>
           <td>
-            <input
-              list="service-list"
-              type="text"
-              class="table-input"
+            <p-dropdown
+              id="primeng"
+              [options]="services"
               [(ngModel)]="row.serviceName"
+              placeholder="Select a Service"
+              [editable]="true"
+              optionLabel="name"
               [ngClass]="{ 'highlighted-row': row.isHighlighted }"
             />
-            <datalist id="service-list">
-              <option *ngFor="let service of services" [value]="service.name">{{ service.name }}</option>
-            </datalist>
           </td>
           <td>
             <select class="table-input" [(ngModel)]="row.unit" [ngClass]="{ 'highlighted-row': row.isHighlighted }">
