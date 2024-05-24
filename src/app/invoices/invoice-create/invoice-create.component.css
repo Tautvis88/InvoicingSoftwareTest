@@ -265,3 +265,18 @@ input[type="number"] {
 .add-row-btn:hover {
   background-color: #e0e0e0;
 }
+
+/* Rules for hiding/showing quantity buttons -/+ */
+.quantity-container {
+  display: flex; /* to ensure the buttons and input are aligned in a single line */
+}
+
+.quantity-container .table-input {
+  flex: 1 1 auto; /* input field expands and centers when -/+ buttons disappear */
+}
+
+@media (max-width: 1300px) {
+  .quantity-container .quantity-btn {
+    display: none;
+  }
+}

@@ -84,17 +84,19 @@
             </select>
           </td>
           <td class="quantity-cell">
-            <button class="quantity-btn minus" (click)="decreaseQuantity(row)">–</button>
-            <input
-              type="number"
-              class="table-input"
-              [(ngModel)]="row.quantity"
-              (keydown)="preventNegativeKeyboardSymbol($event)"
-              (input)="preventPasteNegativeQuantity($event, row)"
-              (focus)="onFocusSelect($event)"
-              [ngClass]="{ 'highlighted-row': row.isHighlighted }"
-            />
-            <button class="quantity-btn plus" (click)="increaseQuantity(row)">+</button>
+            <div class="quantity-container">
+              <button class="quantity-btn minus" (click)="decreaseQuantity(row)">–</button>
+              <input
+                type="number"
+                class="table-input"
+                [(ngModel)]="row.quantity"
+                (keydown)="preventNegativeKeyboardSymbol($event)"
+                (input)="preventPasteNegativeQuantity($event, row)"
+                (focus)="onFocusSelect($event)"
+                [ngClass]="{ 'highlighted-row': row.isHighlighted }"
+              />
+              <button class="quantity-btn plus" (click)="increaseQuantity(row)">+</button>
+            </div>
           </td>
           <td>
             <input
