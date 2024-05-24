@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { InvoiceDataService } from "../../services/invoice-data.service";
 import { Buyer, InvoiceRow, Service } from "../../models/invoice.model";
 import { Unit } from "../../models/unit.enum";
@@ -7,6 +7,7 @@ import { Unit } from "../../models/unit.enum";
   selector: "app-invoice-create",
   templateUrl: "./invoice-create.component.html",
   styleUrl: "./invoice-create.component.css",
+  encapsulation: ViewEncapsulation.None,
 })
 export class InvoiceCreateComponent implements OnInit {
   buyers: Buyer[] = [];

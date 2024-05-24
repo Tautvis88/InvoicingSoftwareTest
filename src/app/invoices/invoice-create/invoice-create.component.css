@@ -284,3 +284,14 @@ input[type="number"] {
     display: none;
   }
 }
+
+#primeng {
+  border: none;
+  background-color: #f9f9f9;
+  width: 100%;
+  height: 25px;
+}
+
+#primeng .p-dropdown-label {
+  color: black;
+}
