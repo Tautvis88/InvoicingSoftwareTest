@@ -156,7 +156,11 @@
 
 .service-table td {
   border: 1px solid #ddd;
-  padding: 8px 3px 8px 3px; /* 2px because -/+ buttons would be closer to the table border */
+  padding: 8px 3px 8px 3px; /* 3px because -/+ buttons would be closer to the table border */
+}
+
+.service-table tbody td {
+  height: 27px;
 }
 
 .service-table td:hover {
@@ -208,7 +212,7 @@ input[type="number"] {
 }
 
 .quantity-btn {
-  font-size: 1.3em;
+  font-size: 1.2em;
   border: 1px solid #cccccc;
   border-radius: 5px;
   background-color: #f9f9f9;
