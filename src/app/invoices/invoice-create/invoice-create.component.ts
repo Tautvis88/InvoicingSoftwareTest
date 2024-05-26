@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { InvoiceDataService } from "../../services/invoice-data.service";
 import { Buyer, InvoiceRow, Service } from "../../models/invoice.model";
 import { Unit } from "../../models/unit.enum";
+import { NumberConverterService } from "../../services/number-converter.service";
 
 @Component({
   selector: "app-invoice-create",
@@ -17,9 +18,13 @@ export class InvoiceCreateComponent implements OnInit {
   totalWithoutVAT: number = 0;
   VATAmount: number = 0;
   totalWithVAT: number = 0;
+  amountInWords: string = "";
   units = Object.values(Unit);
 
-  constructor(private invoiceDataService: InvoiceDataService) {}
+  constructor(
+    private invoiceDataService: InvoiceDataService,
+    private numberConverterService: NumberConverterService,
+  ) {}
 
   ngOnInit(): void {
     this.loadBuyers();
@@ -59,6 +64,7 @@ export class InvoiceCreateComponent implements OnInit {
     this.totalWithoutVAT = parseFloat(this.rows.reduce((total, row) => total + row.sum, 0).toFixed(2)); // prisiminti ką reiškia 0
     this.VATAmount = parseFloat((this.totalWithoutVAT * 0.21).toFixed(2));
     this.totalWithVAT = parseFloat((this.totalWithoutVAT + this.VATAmount).toFixed(2));
+    this.amountInWords = this.numberConverterService.toLithuanian(this.totalWithVAT);
   }
 
   getUnitDisplay(unit: string): string {
