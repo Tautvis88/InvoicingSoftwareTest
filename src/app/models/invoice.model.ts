@@ -21,3 +21,7 @@ export interface InvoiceRow {
 export interface Service {
   name: string;
 }
+
+export interface Signer {
+  name: string;
+}

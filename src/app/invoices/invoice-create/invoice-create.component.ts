@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { InvoiceDataService } from "../../services/invoice-data.service";
-import { Buyer, InvoiceRow, Service } from "../../models/invoice.model";
+import { Buyer, InvoiceRow, Service, Signer } from "../../models/invoice.model";
 import { Unit } from "../../models/unit.enum";
 import { NumberConverterService } from "../../services/number-converter.service";
 
@@ -15,6 +15,8 @@ export class InvoiceCreateComponent implements OnInit {
   selectedBuyer: Buyer | null = null;
   rows: InvoiceRow[] = [];
   services: Service[] = [];
+  signers: Signer[] = [];
+  selectedSigner: string = "direktorius Viktoras Statkus";
   totalWithoutVAT: number = 0;
   VATAmount: number = 0;
   totalWithVAT: number = 0;
@@ -30,6 +32,7 @@ export class InvoiceCreateComponent implements OnInit {
     this.loadBuyers();
     this.addRow();
     this.loadServices();
+    this.loadSigners();
   }
 
   loadBuyers(): void {
@@ -41,6 +44,12 @@ export class InvoiceCreateComponent implements OnInit {
   loadServices(): void {
     this.invoiceDataService.getServices().subscribe((data: Service[]) => {
       this.services = data;
+    });
+  }
+
+  loadSigners(): void {
+    this.invoiceDataService.getSigners().subscribe((data: Signer[]) => {
+      this.signers = data;
     });
   }
 

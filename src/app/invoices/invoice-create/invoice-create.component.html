@@ -158,6 +158,13 @@
       <tr>
         <td class="label">Sąskaitą išrašė:</td>
         <td class="underline">
+          <p-dropdown
+            id="signerDropdown"
+            [options]="signers"
+            [(ngModel)]="selectedSigner"
+            [editable]="true"
+            optionLabel="name"
+          />
           <span class="explanation-text">(pareigos, vardas, pavardė, parašas)</span>
         </td>
       </tr>

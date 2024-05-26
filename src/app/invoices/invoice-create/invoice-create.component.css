@@ -342,3 +342,21 @@ input[type="number"] {
   left: 50%;
   transform: translateX(-50%);
 }
+
+#signerDropdown {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+}
+
+#signerDropdown .p-dropdown-label {
+  color: black;
+  font-style: italic;
+  font-family: Roboto, sans-serif;
+  padding: 0;
+  font-size: 17px;
+}
+
+#signerDropdown .p-dropdown-items {
+  font-family: Roboto, sans-serif;
+}
