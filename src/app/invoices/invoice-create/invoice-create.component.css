@@ -299,3 +299,46 @@ input[type="number"] {
 .p-dropdown:not(.p-disabled).p-focus {
   box-shadow: none; /* disable blue border when element has focus*/
 }
+
+.info-table-container {
+  width: 100%;
+  margin-top: 50px;
+  padding-right: 20px;
+}
+
+.info-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.info-table tr {
+  height: 60px;
+  vertical-align: bottom;
+}
+
+.info-table .label {
+  font-weight: bold;
+  font-style: italic;
+  text-align: left;
+  border: none;
+  white-space: nowrap;
+  width: 125px;
+  padding-bottom: 3px;
+}
+
+.info-table .underline {
+  border-bottom: 1px solid #ddd;
+  padding-left: 15px;
+  width: calc(100% - 125px);
+  padding-bottom: 4px;
+  font-style: italic;
+}
+
+.explanation-text {
+  display: block;
+  position: absolute;
+  margin-top: 7px;
+  font-size: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
