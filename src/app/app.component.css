@@ -1,0 +1,8 @@
+.app-container {
+  display: flex;
+}
+
+.content {
+  margin-left: 300px; /* left for sidebar width */
+  width: calc(100% - 300px);
+}
