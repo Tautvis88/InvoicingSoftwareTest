@@ -9,9 +9,10 @@ import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { DropdownModule } from "primeng/dropdown";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { SidebarComponent } from "./sidebar/sidebar.component";
 
 @NgModule({
-  declarations: [AppComponent, InvoiceCreateComponent, FlatpickrDirective],
+  declarations: [AppComponent, InvoiceCreateComponent, FlatpickrDirective, SidebarComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, DropdownModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
