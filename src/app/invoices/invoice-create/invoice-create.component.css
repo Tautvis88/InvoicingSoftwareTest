@@ -1,9 +1,9 @@
 .invoice-page {
   background-color: #fff;
-  width: 80%;
+  width: 95%;
   margin: auto;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* 15px and 0.3 adjust box-shadow strength*/
-  padding: 40px 50px 50px 70px;
+  padding: 40px 50px 140px 70px;
   border-radius: 10px;
   font-family: Roboto, sans-serif;
 }
@@ -301,6 +301,7 @@ input[type="number"] {
 }
 
 .info-table-container {
+  position: relative; /* Helps .explanation-text stay inside this container because its position: absolute */
   width: 100%;
   margin-top: 50px;
   padding-right: 20px;
