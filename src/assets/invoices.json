@@ -1,0 +1,42 @@
+[
+  {
+    "date": "2023-11-05",
+    "number": "STA01501",
+    "buyerName": "MAŽEIKIŲ RAJONO SAVIVALDYBĖS ADMINISTRACIJA",
+    "totalWithoutVat": "3500.00",
+    "vatAmount": "700.00",
+    "totalWithVat": "4200.00"
+  },
+  {
+    "date": "2023-11-25",
+    "number": "STA01502",
+    "buyerName": "AKMENĖS RAJONO SAVIVALDYBĖS AKMENĖS KRAŠTO MUZIEJUS",
+    "totalWithoutVat": "5000.00",
+    "vatAmount": "1000.00",
+    "totalWithVat": "6000.00"
+  },
+  {
+    "date": "2023-12-15",
+    "number": "STA01503",
+    "buyerName": "VĮ MAŽEIKIŲ PIRMINĖS SVEIKATOS PRIEŽIŪROS CENTRAS",
+    "totalWithoutVat": "2800.00",
+    "vatAmount": "600.00",
+    "totalWithVat": "3400.00"
+  },
+  {
+    "date": "2024-01-05",
+    "number": "STA01504",
+    "buyerName": "AB \"LIETUVOS RADIJO IR TELEVIZIJOS CENTRAS\"",
+    "totalWithoutVat": "18000.00",
+    "vatAmount": "4000.00",
+    "totalWithVat": "22000.00"
+  },
+  {
+    "date": "2024-02-15",
+    "number": "STA01505",
+    "buyerName": "UAB SANTJANA",
+    "totalWithoutVat": "6400.00",
+    "vatAmount": "1300.00",
+    "totalWithVat": "7700.00"
+  }
+]

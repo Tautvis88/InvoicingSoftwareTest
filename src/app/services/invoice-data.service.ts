@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { Buyer, Service, Signer } from "../models/invoice.model";
+import { Buyer, Invoice, Service, Signer } from "../models/invoice.model";
 
 @Injectable({
   providedIn: "root",
@@ -10,6 +10,7 @@ export class InvoiceDataService {
   private readonly buyersJsonUrl: string = "assets/buyers.json";
   private readonly servicesJsonUrl: string = "assets/services.json";
   private readonly signersJsonUrl: string = "assets/signers.json";
+  private readonly invoicesJsonUrl: string = "assets/invoices.json";
 
   constructor(private http: HttpClient) {}
 
@@ -23,5 +24,9 @@ export class InvoiceDataService {
 
   getSigners(): Observable<Signer[]> {
     return this.http.get<Service[]>(this.signersJsonUrl);
+  }
+
+  getInvoices(): Observable<Invoice[]> {
+    return this.http.get<Invoice[]>(this.invoicesJsonUrl);
   }
 }

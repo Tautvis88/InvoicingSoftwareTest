@@ -25,3 +25,12 @@ export interface Service {
 export interface Signer {
   name: string;
 }
+
+export interface Invoice {
+  date: string;
+  number: string;
+  buyerName: string;
+  totalWithoutVat: string;
+  vatAmount: string;
+  totalWithVat: string;
+}

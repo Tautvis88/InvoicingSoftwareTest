@@ -1,1 +1,39 @@
-<p>invoice-list works!</p>
+<div class="invoice-list">
+  <img src="assets/company-logo.png" alt="Company logo" class="company-logo" />
+  <div class="invoice-header">SĄSKAITOS</div>
+
+  <div class="service-table-container">
+    <table class="service-table">
+      <thead>
+        <tr>
+          <th>Eilės<br />Nr.</th>
+          <th>Data</th>
+          <th>Sąskaitos<br />Nr.</th>
+          <th>Klientas</th>
+          <th>Suma be<br />PVM (Eur)</th>
+          <th>PVM<br />(Eur)</th>
+          <th>Suma su<br />PVM (Eur)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let invoice of invoices; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ invoice.date }}</td>
+          <td>{{ invoice.number }}</td>
+          <td class="buyer-name">{{ invoice.buyerName }}</td>
+          <td>{{ invoice.totalWithoutVat }}</td>
+          <td>{{ invoice.vatAmount }}</td>
+          <td>{{ invoice.totalWithVat }}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4" class="footer-label">IŠ VISO:</td>
+          <td id="total-VAT-excluded" class="footer-amount">9999,99</td>
+          <td id="VAT-amount" class="footer-amount">9999,99</td>
+          <td id="total-VAT-included" class="footer-amount">9999,99</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>
