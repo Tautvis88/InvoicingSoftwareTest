@@ -10,9 +10,10 @@ import { FormsModule } from "@angular/forms";
 import { DropdownModule } from "primeng/dropdown";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { SidebarComponent } from "./sidebar/sidebar.component";
+import { InvoiceListComponent } from './invoices/invoice-list/invoice-list.component';
 
 @NgModule({
-  declarations: [AppComponent, InvoiceCreateComponent, FlatpickrDirective, SidebarComponent],
+  declarations: [AppComponent, InvoiceCreateComponent, FlatpickrDirective, SidebarComponent, InvoiceListComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, DropdownModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
