@@ -11,6 +11,7 @@ export class InvoiceDataService {
   private readonly servicesJsonUrl: string = "assets/services.json";
   private readonly signersJsonUrl: string = "assets/signers.json";
   private readonly invoicesJsonUrl: string = "assets/invoices.json";
+  private readonly apiUrl: string = "http://localhost:8080/api";
 
   constructor(private http: HttpClient) {}
 
@@ -27,6 +28,6 @@ export class InvoiceDataService {
   }
 
   getInvoices(): Observable<Invoice[]> {
-    return this.http.get<Invoice[]>(this.invoicesJsonUrl);
+    return this.http.get<Invoice[]>(`${this.apiUrl}/invoices`);
   }
 }

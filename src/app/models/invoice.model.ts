@@ -27,6 +27,7 @@ export interface Signer {
 }
 
 export interface Invoice {
+  id: number;
   date: string;
   number: string;
   buyerName: string;
