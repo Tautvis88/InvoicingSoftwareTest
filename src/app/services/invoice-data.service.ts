@@ -20,7 +20,7 @@ export class InvoiceDataService {
   }
 
   getPredefinedServices(): Observable<PredefinedService[]> {
-    return this.http.get<PredefinedService[]>(this.predefinedServicesJsonUrl);
+    return this.http.get<PredefinedService[]>(`${this.apiUrl}/predefined-services`);
   }
 
   getSigners(): Observable<Signer[]> {
