@@ -16,7 +16,7 @@ export class InvoiceDataService {
   constructor(private http: HttpClient) {}
 
   getClients(): Observable<Client[]> {
-    return this.http.get<Client[]>(this.clientsJsonUrl);
+    return this.http.get<Client[]>(`${this.apiUrl}/clients`);
   }
 
   getServices(): Observable<Service[]> {
