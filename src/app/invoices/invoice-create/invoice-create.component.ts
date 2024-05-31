@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { InvoiceDataService } from "../../services/invoice-data.service";
-import { Buyer, InvoiceRow, Service, Signer } from "../../models/invoice.model";
+import { Client, InvoiceRow, Service, Signer } from "../../models/invoice.model";
 import { Unit } from "../../models/unit.enum";
 import { NumberConverterService } from "../../services/number-converter.service";
 
@@ -11,8 +11,8 @@ import { NumberConverterService } from "../../services/number-converter.service"
   encapsulation: ViewEncapsulation.None,
 })
 export class InvoiceCreateComponent implements OnInit {
-  buyers: Buyer[] = [];
-  selectedBuyer: Buyer | null = null;
+  clients: Client[] = [];
+  selectedClient: Client | null = null;
   rows: InvoiceRow[] = [];
   services: Service[] = [];
   signers: Signer[] = [];
@@ -29,15 +29,15 @@ export class InvoiceCreateComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loadBuyers();
+    this.loadClients();
     this.addRow();
     this.loadServices();
     this.loadSigners();
   }
 
-  loadBuyers(): void {
-    this.invoiceDataService.getBuyers().subscribe((data: Buyer[]) => {
-      this.buyers = data;
+  loadClients(): void {
+    this.invoiceDataService.getClients().subscribe((data: Client[]) => {
+      this.clients = data;
     });
   }
 
@@ -53,10 +53,10 @@ export class InvoiceCreateComponent implements OnInit {
     });
   }
 
-  onBuyerChange(event: Event): void {
+  onClientChange(event: Event): void {
     const selectElement = event.target as HTMLSelectElement;
     const selectedName = selectElement.value;
-    this.selectedBuyer = this.buyers.find((buyer) => buyer.name === selectedName) || null;
+    this.selectedClient = this.clients.find((client) => client.name === selectedName) || null;
   }
 
   addRow() {

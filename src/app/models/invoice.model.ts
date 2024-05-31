@@ -1,10 +1,10 @@
 import { Unit } from "./unit.enum";
 
-export interface Buyer {
+export interface Client {
   name: string;
   address: string;
   companyCode: string;
-  VATCode: string;
+  vatCode: string;
   phoneNumber: string;
   email: string;
 }
@@ -30,7 +30,7 @@ export interface Invoice {
   id: number;
   date: string;
   number: string;
-  buyerName: string;
+  clientName: string;
   totalWithoutVat: string;
   vatAmount: string;
   totalWithVat: string;

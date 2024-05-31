@@ -49,18 +49,18 @@
 }
 
 .details-container {
-  display: flex; /* puts seller and buyer into one row */
-  justify-content: space-between; /* moves seller to the left, buyer to the right side - adds space between them */
+  display: flex; /* puts seller and client into one row */
+  justify-content: space-between; /* moves seller to the left, client to the right side - adds space between them */
   margin-top: 20px;
 }
 
 .seller,
-.buyer {
+.client {
   display: block;
   margin-bottom: 15px;
 }
 .seller-details,
-.buyer-details {
+.client-details {
   width: 55%; /* DO I NEED THIS? SETS THE SIZE OF THE COLUMNS???*/
 }
 
@@ -69,7 +69,7 @@
   font-size: 18px;
 }
 
-#buyer-select {
+#client-select {
   font-style: italic;
   font-weight: bold;
   font-size: 16px;
@@ -80,14 +80,14 @@
   width: 100%;
 }
 
-#buyer-select option {
+#client-select option {
   font-style: italic;
   font-weight: bold;
   font-size: 16px;
 }
 
 .seller-details p,
-.buyer-details p {
+.client-details p {
   line-height: 1.7;
   font-style: italic;
   margin: 0;

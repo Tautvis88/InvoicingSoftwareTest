@@ -3,7 +3,7 @@
     "name": "MAŽEIKIŲ RAJONO SAVIVALDYBĖS ADMINISTRACIJA",
     "address": "Laisvės g. 8, LT-89223, Mažeikiai",
     "companyCode": "167371234",
-    "VATCode": "nėra PVM mokėtojas",
+    "vatCode": "nėra PVM mokėtojas",
     "phoneNumber": "+370 693 91985",
     "email": "daiva.kuodiene@mazeikiai.lt"
   },
@@ -11,7 +11,7 @@
     "name": "AKMENĖS RAJONO SAVIVALDYBĖS AKMENĖS KRAŠTO MUZIEJUS",
     "address": "Kasakausko g. 17, LT-85367, Akmenė",
     "companyCode": "300629754",
-    "VATCode": "nėra PVM mokėtojas",
+    "vatCode": "nėra PVM mokėtojas",
     "phoneNumber": "8-425-55075",
     "email": "akmenesmuziejus@gmail.com"
   },
@@ -19,7 +19,7 @@
     "name": "VĮ MAŽEIKIŲ PIRMINĖS SVEIKATOS PRIEŽIŪROS CENTRAS",
     "address": "Naftininkų g. 9, LT-89239, Mažeikiai",
     "companyCode": "166913931",
-    "VATCode": "nėra PVM mokėtojas",
+    "vatCode": "nėra PVM mokėtojas",
     "phoneNumber": "8-443-95177",
     "email": "info@mazeikiupspc.lt"
   },
@@ -27,7 +27,7 @@
     "name": "AB \"LIETUVOS RADIJO IR TELEVIZIJOS CENTRAS\"",
     "address": "Sausio 13-osios g. 10, Vilnius",
     "companyCode": "120505210",
-    "VATCode": "LT205052113",
+    "vatCode": "LT205052113",
     "phoneNumber": "(8 5) 204 03 00",
     "email": "info@telecentras.lt"
   },
@@ -35,7 +35,7 @@
     "name": "UAB SANTJANA",
     "address": "Erfurto g. 30, LT-04100, Vilnius",
     "companyCode": "122656944",
-    "VATCode": "LT226569415",
+    "vatCode": "LT226569415",
     "phoneNumber": "+370 700 35525",
     "email": "info@santjana.lt"
   }

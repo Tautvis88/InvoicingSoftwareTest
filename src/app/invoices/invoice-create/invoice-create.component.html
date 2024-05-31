@@ -32,20 +32,20 @@
       </p>
     </div>
 
-    <div class="buyer-details">
-      <strong class="buyer">PIRKĖJAS:</strong>
-      <div class="buyer-dropdown">
-        <select id="buyer-select" (change)="onBuyerChange($event)">
+    <div class="client-details">
+      <strong class="client">PIRKĖJAS:</strong>
+      <div class="client-dropdown">
+        <select id="client-select" (change)="onClientChange($event)">
           <option value="" disabled selected>Pasirinkite įmonę...</option>
-          <option *ngFor="let buyer of buyers" [value]="buyer.name">{{ buyer.name }}</option>
+          <option *ngFor="let client of clients" [value]="client.name">{{ client.name }}</option>
         </select>
       </div>
       <p>
-        <strong>Adresas: </strong>{{ selectedBuyer?.address }}<br />
-        <strong>Įmonės kodas: </strong>{{ selectedBuyer?.companyCode }}<br />
-        <strong>PVM kodas: </strong>{{ selectedBuyer?.VATCode }}<br />
-        <strong>Tel: </strong>{{ selectedBuyer?.phoneNumber }}<br />
-        <strong>El. p. </strong>{{ selectedBuyer?.email }}<br />
+        <strong>Adresas: </strong>{{ selectedClient?.address }}<br />
+        <strong>Įmonės kodas: </strong>{{ selectedClient?.companyCode }}<br />
+        <strong>PVM kodas: </strong>{{ selectedClient?.vatCode }}<br />
+        <strong>Tel: </strong>{{ selectedClient?.phoneNumber }}<br />
+        <strong>El. p. </strong>{{ selectedClient?.email }}<br />
       </p>
     </div>
   </div>
