@@ -19,6 +19,10 @@ export class InvoiceDataService {
     return this.http.get<Client[]>(`${this.apiUrl}/clients`);
   }
 
+  addClient(client: Client): Observable<Client> {
+    return this.http.post<Client>(`${this.apiUrl}/clients`, client);
+  }
+
   getPredefinedServices(): Observable<PredefinedService[]> {
     return this.http.get<PredefinedService[]>(`${this.apiUrl}/predefined-services`);
   }

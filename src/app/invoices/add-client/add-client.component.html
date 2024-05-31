@@ -1,1 +1,26 @@
-<p>add-client works!</p>
+<div class="add-client-page">
+  <img src="assets/company-logo.png" alt="Company logo" class="company-logo" />
+  <div class="invoice-header">Pridėti naują klientą</div>
+
+  <form [formGroup]="addClientForm" (ngSubmit)="onSubmit()">
+    <label for="name">Įmonės pavadinimas:</label>
+    <input id="name" formControlName="name" type="text" />
+
+    <label for="address">Adresas:</label>
+    <input id="address" formControlName="address" type="text" />
+
+    <label for="companyCode">Įmonės kodas:</label>
+    <input id="companyCode" formControlName="companyCode" type="text" />
+
+    <label for="vatCode">PVM kodas:</label>
+    <input id="vatCode" formControlName="vatCode" type="text" />
+
+    <label for="phoneNumber">Telefono numeris:</label>
+    <input id="phoneNumber" formControlName="phoneNumber" type="text" />
+
+    <label for="email">El. paštas:</label>
+    <input id="email" formControlName="email" type="email" />
+
+    <button type="submit" [disabled]="addClientForm.invalid">Pridėti klientą</button>
+  </form>
+</div>
