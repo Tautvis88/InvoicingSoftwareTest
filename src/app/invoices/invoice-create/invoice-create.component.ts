@@ -17,9 +17,9 @@ export class InvoiceCreateComponent implements OnInit {
   services: Service[] = [];
   signers: Signer[] = [];
   selectedSigner: string = "direktorius Viktoras Statkus";
-  totalWithoutVAT: number = 0;
-  VATAmount: number = 0;
-  totalWithVAT: number = 0;
+  totalWithoutVat: number = 0;
+  vatAmount: number = 0;
+  totalWithVat: number = 0;
   amountInWords: string = "";
   units = Object.values(Unit);
 
@@ -68,12 +68,11 @@ export class InvoiceCreateComponent implements OnInit {
     this.updateTotals();
   }
 
-  private updateTotals(): void {
-    // IJ sukūrė automatiškai su žodeliu private, pagooglinti ar reikia visur jo?
-    this.totalWithoutVAT = parseFloat(this.rows.reduce((total, row) => total + row.sum, 0).toFixed(2)); // prisiminti ką reiškia 0
-    this.VATAmount = parseFloat((this.totalWithoutVAT * 0.21).toFixed(2));
-    this.totalWithVAT = parseFloat((this.totalWithoutVAT + this.VATAmount).toFixed(2));
-    this.amountInWords = this.numberConverterService.toLithuanian(this.totalWithVAT);
+  updateTotals(): void {
+    this.totalWithoutVat = parseFloat(this.rows.reduce((total, row) => total + row.sum, 0).toFixed(2));
+    this.vatAmount = parseFloat((this.totalWithoutVat * 0.21).toFixed(2));
+    this.totalWithVat = parseFloat((this.totalWithoutVat + this.vatAmount).toFixed(2));
+    this.amountInWords = this.numberConverterService.toLithuanian(this.totalWithVat);
   }
 
   getUnitDisplay(unit: string): string {
