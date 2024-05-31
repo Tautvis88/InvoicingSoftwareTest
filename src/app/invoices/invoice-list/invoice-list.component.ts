@@ -9,6 +9,9 @@ import { InvoiceDataService } from "../../services/invoice-data.service";
 })
 export class InvoiceListComponent implements OnInit {
   invoices: Invoice[] = [];
+  totalWithoutVat: number = 0;
+  vatAmount: number = 0;
+  totalWithVat: number = 0;
 
   constructor(private invoiceDataService: InvoiceDataService) {}
 
@@ -19,6 +22,13 @@ export class InvoiceListComponent implements OnInit {
   loadInvoices(): void {
     this.invoiceDataService.getInvoices().subscribe((data: Invoice[]) => {
       this.invoices = data;
+      this.calculateTotals();
     });
+  }
+
+  calculateTotals(): void {
+    this.totalWithoutVat = this.invoices.reduce((sum, invoice) => sum + parseFloat(invoice.totalWithoutVat), 0);
+    this.vatAmount = this.invoices.reduce((sum, invoice) => sum + parseFloat(invoice.vatAmount), 0);
+    this.totalWithVat = this.invoices.reduce((sum, invoice) => sum + parseFloat(invoice.totalWithVat), 0);
   }
 }

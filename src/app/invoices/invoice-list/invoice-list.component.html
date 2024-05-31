@@ -29,9 +29,9 @@
       <tfoot>
         <tr>
           <td colspan="4" class="footer-label">IŠ VISO:</td>
-          <td id="total-VAT-excluded" class="footer-amount">9999,99</td>
-          <td id="VAT-amount" class="footer-amount">9999,99</td>
-          <td id="total-VAT-included" class="footer-amount">9999,99</td>
+          <td id="total-VAT-excluded" class="footer-amount">{{ totalWithoutVat | number: "1.2-2" }}</td>
+          <td id="VAT-amount" class="footer-amount">{{ vatAmount | number: "1.2-2" }}</td>
+          <td id="total-VAT-included" class="footer-amount">{{ totalWithVat | number: "1.2-2" }}</td>
         </tr>
       </tfoot>
     </table>
