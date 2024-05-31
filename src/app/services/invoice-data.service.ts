@@ -24,7 +24,7 @@ export class InvoiceDataService {
   }
 
   getSigners(): Observable<Signer[]> {
-    return this.http.get<Service[]>(this.signersJsonUrl);
+    return this.http.get<Signer[]>(`${this.apiUrl}/signers`);
   }
 
   getInvoices(): Observable<Invoice[]> {
