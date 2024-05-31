@@ -17,18 +17,17 @@ export class AddClientComponent {
     this.addClientForm = this.formBuilder.group({
       name: ["", Validators.required],
       address: ["", Validators.required],
+      country: ["", Validators.required],
       companyCode: ["", Validators.required],
-      vatCode: ["", Validators.required],
-      phoneNumber: ["", Validators.required],
+      vatCode: ["LT", Validators.required],
+      phoneNumber: ["+370", Validators.required],
       email: ["", [Validators.required, Validators.email]],
     });
   }
 
   onSubmit(): void {
     if (this.addClientForm.valid) {
-      // this.invoiceDataService.addClient(this.addClientForm.value).subscribe((response) => {
-      //   // Handle response and navigate back to the client list or show a success message
-      // });
+      this.invoiceDataService.addClient(this.addClientForm.value).subscribe();
     }
   }
 }
