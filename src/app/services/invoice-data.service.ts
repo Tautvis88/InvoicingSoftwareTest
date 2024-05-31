@@ -1,14 +1,14 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { Client, Invoice, Service, Signer } from "../models/invoice.model";
+import { Client, Invoice, PredefinedService, Signer } from "../models/invoice.model";
 
 @Injectable({
   providedIn: "root",
 })
 export class InvoiceDataService {
   private readonly clientsJsonUrl: string = "assets/clients.json";
-  private readonly servicesJsonUrl: string = "assets/services.json";
+  private readonly predefinedServicesJsonUrl: string = "assets/predefined_services.json";
   private readonly signersJsonUrl: string = "assets/signers.json";
   private readonly invoicesJsonUrl: string = "assets/invoices.json";
   private readonly apiUrl: string = "http://localhost:8080/api";
@@ -19,8 +19,8 @@ export class InvoiceDataService {
     return this.http.get<Client[]>(`${this.apiUrl}/clients`);
   }
 
-  getServices(): Observable<Service[]> {
-    return this.http.get<Service[]>(this.servicesJsonUrl);
+  getPredefinedServices(): Observable<PredefinedService[]> {
+    return this.http.get<PredefinedService[]>(this.predefinedServicesJsonUrl);
   }
 
   getSigners(): Observable<Signer[]> {

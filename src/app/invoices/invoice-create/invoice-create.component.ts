@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { InvoiceDataService } from "../../services/invoice-data.service";
-import { Client, InvoiceRow, Service, Signer } from "../../models/invoice.model";
+import { Client, InvoiceRow, PredefinedService, Signer } from "../../models/invoice.model";
 import { Unit } from "../../models/unit.enum";
 import { NumberConverterService } from "../../services/number-converter.service";
 
@@ -14,7 +14,7 @@ export class InvoiceCreateComponent implements OnInit {
   clients: Client[] = [];
   selectedClient: Client | null = null;
   rows: InvoiceRow[] = [];
-  services: Service[] = [];
+  predefinedServices: PredefinedService[] = [];
   signers: Signer[] = [];
   selectedSigner: string = "direktorius Viktoras Statkus";
   totalWithoutVat: number = 0;
@@ -31,7 +31,7 @@ export class InvoiceCreateComponent implements OnInit {
   ngOnInit(): void {
     this.loadClients();
     this.addRow();
-    this.loadServices();
+    this.loadPredefinedServices();
     this.loadSigners();
   }
 
@@ -41,9 +41,9 @@ export class InvoiceCreateComponent implements OnInit {
     });
   }
 
-  loadServices(): void {
-    this.invoiceDataService.getServices().subscribe((data: Service[]) => {
-      this.services = data;
+  loadPredefinedServices(): void {
+    this.invoiceDataService.getPredefinedServices().subscribe((data: PredefinedService[]) => {
+      this.predefinedServices = data;
     });
   }
 

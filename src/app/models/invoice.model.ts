@@ -18,7 +18,8 @@ export interface InvoiceRow {
   sum: number;
 }
 
-export interface Service {
+export interface PredefinedService {
+  id: number;
   name: string;
 }
 
