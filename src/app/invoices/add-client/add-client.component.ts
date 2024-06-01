@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { InvoiceDataService } from "../../services/invoice-data.service";
+import { Client } from "../../models/invoice.model";
 
 @Component({
   selector: "app-add-client",
@@ -27,7 +28,19 @@ export class AddClientComponent {
 
   onSubmit(): void {
     if (this.addClientForm.valid) {
-      this.invoiceDataService.addClient(this.addClientForm.value).subscribe();
+      this.invoiceDataService.addClient(this.addClientForm.value).subscribe((response: Client) => {
+        alert("Invoice added successfully. " + JSON.stringify(response, null, 2));
+        // Reset the form fields
+        this.addClientForm.reset({
+          name: "",
+          address: "",
+          country: "",
+          companyCode: "",
+          vatCode: "LT",
+          phoneNumber: "+370",
+          email: "",
+        });
+      });
     }
   }
 }
